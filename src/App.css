@@ -1,0 +1,491 @@
+@font-face {
+  src: url(../src/assets/fonts/CormorantGaramond-Regular.ttf);
+  font-family: cor;
+}
+
+@font-face {
+  font-family: rega;
+  src: url(../src/assets/fonts/ReggaeOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: nos;
+  src: url(../src/assets/fonts/Nosifer-Regular.ttf);
+}
+
+@font-face {
+  font-family: eat;
+  src: url(../src/assets/fonts/Eater-Regular.ttf);
+}
+
+@font-face {
+  font-family: rubic;
+  src: url(../src/assets/fonts/RubikGlitch-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h2{
+  font-size: 1.5em;
+  font-weight: 300;
+  font-family: cor;
+}
+
+body {
+  /* color: #39a6b2; */
+  image-resolution: 10%;
+  font-family: cor;
+  width: 100vw;
+  background-image: url(../src/assets/images/white_on_black.gif);
+  background-size: 95vw;
+}
+
+/* apply styles to <header> */
+header {
+  padding: 20px 35px;
+  align-items: center;
+  background-color: gray;
+  opacity: calc(100);
+  position: sticky;
+  top: 0px;
+  z-index: 50;
+}
+
+footer {
+  background-color: gray;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0px;  
+}
+
+footer * {
+  
+  justify-content: space-evenly;
+}
+
+.currentPage a {
+  font-weight: bolder;
+}
+
+#name {
+  color: black;
+  font-size: 3em;
+  width: 40%;
+  padding-left: 5%;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: rgba(66, 61, 61, 0.171);
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav {
+  float: right;
+  margin: 7px 0;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  margin: 0 30px;
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+/*about me section start*/
+.aboutme {
+  padding: 80px;
+  display: flex;
+  align-items: stretch;
+  vertical-align: top;
+  /* background-color: lightgray; */
+}
+
+.aboutme-rightside {
+  font-weight: 700;
+  font-size: 1.25em;
+  padding: 0 0 0 40px;
+  color: black;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: justify;
+  height: 50vh;
+}
+
+ul {
+  color: black;
+  padding-left: 3em;
+}
+.aboutme-leftside {
+  text-align: right;
+  padding: 0 40px 0 40px;
+  color: black;
+  font-size: 50px;
+  line-height: 1.2;
+  display: inline-block;
+  border-right: 3px solid;
+  border-color: black;
+  height: 65vh;
+  font-family: rubic;
+}
+
+/*about me section end*/
+
+
+/* work section begin */
+.work {
+  text-align: center;
+  /* background: lightgray; */
+  display: flex;
+}
+
+.work li {
+  
+font-weight: 800;
+}
+
+.work img {
+  margin: 1.5em;
+  max-width: 50vw;
+}
+
+.work-leftside {
+  font-size: 50px;
+  color: black;
+  margin: 35px;
+  padding: 30px 40px 0 60px;
+  border-right: 3.5px solid;
+  border-color: black;
+  height: 65vh;
+  font-family: rubic;
+}
+
+.work-rightside {
+  max-width: 17em;
+  font-size: 55px;
+  color: black;
+  margin: 35px 0 35px 2px;
+  padding: 0;
+  position: relative;
+  flex-grow: 1;
+}
+
+.container {
+  position: relative;
+  text-align: left;
+  vertical-align: bottom;
+  color: black;
+}
+
+.container img {
+  width: 97%;
+  height: auto;
+  border: 7px solid #555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  ;
+}
+
+.pictextt {
+  font-size: 40px;
+  position: relative;
+  width: 8em;
+  vertical-align: bottom;
+  bottom: 60px;
+  left: 0px;
+  background-color: #555;
+  padding: 0 0 0 .23em;
+}
+
+.btmw {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 97%;
+  justify-content: space-around;
+  gap: .89em;
+}
+
+.btmw img {
+  width: 100%;
+  height: 18vw;
+  border: 5px solid #555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.btmw image :hover {
+  opacity: 1.0;
+}
+
+.pictext {
+  font-size: .45em;
+  text-align: left;
+  padding: 0 0 0 5px;
+  color: black;
+  position: relative;
+  width: 9em;
+  bottom: 60px;
+  background-color: #555;
+}
+
+/* work section end*/
+
+/*
+     Hero Style Start */
+.hero {
+  background-image: url("./assets/images/banner.jpg");
+  max-height: 15vh;
+  min-height: 15vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Hero Style End */
+
+/* Reach Out Style Start */
+
+#contact-section {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#con {
+  display: flex;
+  /* justify-content: space-evenly; */
+  color: black;
+  font-size: 1.2em;
+}
+
+#con a {
+  margin: 1.5em;
+}
+
+#contact-me {
+  text-align: right;
+  padding: 0 40px 0 107px;
+  color: black;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.2;
+  border-right: 3.5px solid;
+  border-color: black;
+}
+
+html,
+body {
+  position: relative;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+}
+
+.contactForm h2 {
+  display: block;
+  font-size: 50px;
+}
+
+.contactForm form {
+  font-size: 1.7em;
+}
+
+.contactForm input, .contactForm textarea {
+  float: right;
+  width: 250px;
+ height: 2.2em;
+}
+
+.contactForm textarea {
+  height: 12em;
+}
+
+.resume {
+  max-width:50vw;
+}
+
+
+
+
+/* start media query here -  tablet devices */
+@media only screen and (max-width: 390px) {
+
+  header a {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 16vh;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  header,
+
+  .hero {
+    width: 100%;
+    flex-direction: column;
+    height: 150px;
+    align-items: center;
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  header nav ul li a {
+    margin:1em .45em 0 0;
+    padding: 0;
+  }
+
+  #name {
+    font-size: 2.2em;
+    margin: 0%;
+    padding-bottom: .25em;
+    padding-left: 0;
+  }
+
+  .aboutme {
+    flex-direction: column;
+    padding: 0;
+    margin: 1em;
+  }
+
+  .aboutme-rightside{
+    padding: 1em;
+  }
+
+  .aboutme-leftside {
+    display: block;
+    text-align: center;
+    padding: .50em 1em 0 1em;
+    border-right: none;
+    font-size: 35px;
+    height: 10vh;
+  }
+
+  .work {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 5%;
+  }
+
+  .work-leftside {
+    padding: 0;
+    margin: 0;
+    border-right: none;
+    font-size: 35px;
+    height: 15vh;
+  }
+
+  .contactForm {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact-section {
+    flex-direction: column;
+  }
+
+  #contact-me {
+    text-align: center;
+    padding: 0;
+    border-right: none;
+    font-size: 25px;
+  } 
+
+  #contact-me div {
+    display: inline;
+  }
+
+  .pictext {
+    width: auto;
+    font-size: .25em;
+    bottom: 40px;
+  }
+
+  .btmw {
+    width: 100%;
+    gap: .25em;
+  }
+
+  .container img {
+    width: 100%;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #con {
+    font-size: .9em;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+  }
+
+  #con a {
+    margin: .4em;
+  }
+
+  .contactForm form {
+    margin: 1em;
+  }
+
+  .serv {
+    margin: 1em;
+  }
+}
+
+/* end media query here - tablet devices */
