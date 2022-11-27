@@ -10,7 +10,7 @@ import Project from '../Project';
 function Portfolio(props) {
   return (
     <section id="work" className="work">
-      <h2 className="work-leftside">(coding) Portfolio</h2>
+      <h2 className="work-leftside">to Contribute</h2>
       <div className="work-rightside">
         <div className="btmw">
           <Project

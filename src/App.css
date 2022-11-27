@@ -30,6 +30,35 @@
   color: black;
 }
 
+/* .circle {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+
+  --xA: 10px;
+  --yA: 10px;
+  --xB: 30px;
+  --yB: 30px;
+
+  animation-name: moveCircle;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(.17, .67, .4, 1.31);
+}
+
+@keyframes moveCircles {
+  0% {
+    transform: translate3d(var(--xA), var(--yA), 0);
+  }
+  100% {
+    transform: translate3d(var(--xB), var(--yB), 0);
+  }
+} */
+
 a {
   text-decoration: none;
   color: white;
@@ -258,7 +287,6 @@ font-weight: 800;
 /*
      Hero Style Start */
 .hero {
-  background-image: url("./assets/images/banner.jpg");
   max-height: 15vh;
   min-height: 15vh;
   background-size: cover;

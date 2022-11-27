@@ -3,12 +3,13 @@ function Resume(props) {
 
   return (
     <section id="work" className="work">
-      <h2 className="work-leftside">Services</h2>
-      <div >
+      <h2 className="work-leftside">CultureS</h2>
+      {/* <div >
         <div className="serv">
         <br></br>
         <br></br>        <br></br>
         <br></br>        <br></br>
+        <figure  class="circle"></figure>
         <br></br>
         <ul>
         <li>Home Cinema</li>
@@ -20,7 +21,7 @@ function Resume(props) {
         <li>CD Collection Ripping/Duplication</li>
         </ul>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

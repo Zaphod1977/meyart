@@ -2,7 +2,7 @@ import React from 'react';
 function About() {
   return (
     <section id="about" className="aboutme">
-      <h2 id="about" className="aboutme-leftside">About</h2>
+      <h2 id="about" className="aboutme-leftside">Synapse</h2>
       <p className="aboutme-rightside">
 
         &emsp;Hello, my name is Bobby Bridges. I am a father, grandfather, soccer fan and independant business owner. I have

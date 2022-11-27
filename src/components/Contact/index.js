@@ -38,8 +38,8 @@ function ContactForm() {
 
   return (
     <section className='contactForm'>
-      <h2 data-testid="h1tag" className='work-leftside'>Contact me</h2>
-      <form id="contact-form" className='work-rightside' onSubmit={handleSubmit}>
+      <h2 data-testid="h1tag" className='work-leftside'>Art</h2>
+      {/* <form id="contact-form" className='work-rightside' onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
@@ -62,7 +62,7 @@ function ContactForm() {
         <div>
           <p>Call me @ 314-853-0016</p>
         </div>
-      </form>
+      </form> */}
     </section>
   );
 }
