@@ -19,26 +19,26 @@ function Portfolio(props) {
             imageAlt=""
             label="MERN Demo">
           </Project>
-          <Project
+          {/* <Project
             linkurl="https://agile-harbor-58683.herokuapp.com/"
             imageSource={STL_Happens}
             imageAlt="STL_Happens screenshot"
             label="STL Happens">
-          </Project>
+          </Project> */}
         </div>
         <div className="btmw">
-          <Project
+          {/* <Project
             linkurl="https://zaphod1977.github.io/Weather-Dashboard/"
             imageSource={weatherApp}
             imageAlt="webpage screengrab"
             label="Weather App">
-          </Project>
-          <Project
+          </Project> */}
+          {/* <Project
             linkurl="https://amymgardiner.github.io/movieJuice/"
             imageSource={movieJuice}
             imageAlt="webpage screengrab"
             label="movieJuice">
-          </Project>
+          </Project> */}
         </div>
       </div>
     </section>
