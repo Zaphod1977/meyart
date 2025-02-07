@@ -21,7 +21,7 @@ function Nav(props) {
         <ul className="flex-row">
           <li className={currentPage === "About" ? "currentPage" : ""}>
             <a data-testid="about" href="#About" onClick={() => setCurrentPage("About")}>
-              Synapse
+              synapse
             </a>
           </li>
           <li className={currentPage === "Portfolio" ? "currentPage" : ""}>
@@ -31,12 +31,12 @@ function Nav(props) {
           </li>
           <li className={currentPage === "Resume" ? "currentPage" : ""}>
             <a data-testid="Resume" href="#Resume" onClick={() => setCurrentPage("Resume")}>
-              Photography
+              photography
             </a>
           </li>
           <li className={currentPage === "Contact" ? "currentPage" : ""}>
             <a data-testid="Contact" href="#Contact" onClick={() => setCurrentPage("Contact")}>
-              Art
+              art
             </a>
           </li>
           <li className={currentPage === "Contact" ? "currentPage" : ""}>

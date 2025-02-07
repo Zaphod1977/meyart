@@ -34,4 +34,80 @@
     width: 85%; /* Adjust width as needed */
     max-width: 900px;
     margin-top: 20px;
+    position: relative; /* Ensures pseudo-elements are positioned correctly */
+    overflow: hidden; /* Prevents scrolling artifacts */
+    z-index: 0;
+  }
+
+  /* Add a gradient overlay to fade out images on the edges */
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%; /* Adjust this value to control the fade width */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* Ensures the user can still scroll normally */
+}
+
+/* Left fade effect */
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Right fade effect */
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+  /* ====== MEDIA QUERIES ====== */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    .carousel-container {
+      width: 90%; /* Allows more width on smaller screens */
+    }
+
+    H1 {
+        font-size: 1em;
+    }
+  
+    .slick-slide img {
+      width: 200px !important; /* Slightly smaller images */
+      height: 280px !important;
+      margin: 0 10px !important; /* Reduce spacing */
+    }
+  }
+  
+  /* Mobile Landscape (up to 768px) */
+  @media (max-width: 768px) {
+    .carousel-container {
+      width: 95%; /* Allows more width on mobile */
+    }
+  
+    .slick-slide img {
+      width: 180px !important; /* Reduce image size */
+      height: 250px !important;
+      margin: 0 8px !important; /* Reduce spacing further */
+    }
+  }
+  
+  /* Mobile Portrait (up to 480px) */
+  @media (max-width: 480px) {
+    .carousel-container {
+      width: 100%;
+    }
+  
+    .slick-slide img {
+      width: 150px !important; /* Make images even smaller */
+      height: 220px !important;
+      margin: 0 5px !important; /* Further reduce spacing */
+    }
+  
+    .slick-dots {
+      bottom: -10px; /* Adjust dot positioning */
+    }
   }

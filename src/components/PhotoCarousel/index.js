@@ -45,21 +45,26 @@ const PhotoCarousel = () => {
 
   return (
     <div className="carousel-container">
-      {photos.length === 0 ? (
-        <p>No photos found. Check the folder name/path and file extensions.</p>
-      ) : (
-        <Slider {...settings}>
-          {photos.map((photo, index) => (
-            <div key={index}>
+      <Slider {...settings}>
+        {photos.map((photo, index) => (
+          <div key={index} className="carousel-slide">
+            {/* Wrapping the image in an <a> tag so it opens in a new tab */}
+            <a href={photo.src} target="_blank" rel="noopener noreferrer">
               <img
                 src={photo.src}
                 alt={photo.title}
-                style={{ width: '100%', height: 'auto' }}
+                style={{
+                  width: "250px",
+                  height: "350px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                  margin: "0 15px",
+                }}
               />
-            </div>
-          ))}
-        </Slider>
-      )}
+            </a>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

@@ -383,7 +383,7 @@ body {
 @media only screen and (max-width: 390px) {
 
   header a {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 600;
   }
   
@@ -408,12 +408,13 @@ body {
   }
 
   nav li {
-    display: inline-block;
     margin: 0;
     padding: 0;
   }
 
   header nav ul li a {
+    flex-wrap: wrap;
+    font-size: 1.5em;
     margin:1em .45em 0 0;
     padding: 0;
   }
