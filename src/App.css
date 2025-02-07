@@ -382,41 +382,73 @@ body {
 /* start media query here -  tablet devices */
 @media only screen and (max-width: 390px) {
 
-  header a {
-    font-size: 1.5em;
-    font-weight: 600;
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 8px 0; /* Reduce vertical padding */
   }
-  
+
+  .hero {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 5px; /* Reduce top and bottom spacing */
+  }
+
+  header a {
+    font-size: 1.1em; /* Slightly reduce font size */
+    font-weight: 600;
+    display: block;
+    text-align: center;
+  }
+
+  /* Center and wrap navigation */
+  nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Allows multiple rows */
+    justify-content: center; /* Centers all items */
+    gap: 5px; /* Reduce spacing between elements */
+    padding: 0;
+    list-style: none;
+    max-width: 300px; /* Slightly reduce width */
+  }
+
+  nav li {
+    flex: 1 1 auto;
+    text-align: center;
+    white-space: nowrap;
+    margin: 2px 0; /* Reduce spacing between rows */
+  }
+
+  /* Keep "galeria de puentes" together */
+  .galeria {
+    white-space: nowrap;
+    flex-basis: 55%; /* Reduce width to make it more compact */
+    text-align: center;
+  }
+
+  /* Reduce spacing for the second row */
+  .row-2 {
+    flex-basis: 25%; /* Reduce width so items are closer */
+  }
+
+  header nav ul li a {
+    font-size: 1.2em; /* Slightly smaller font */
+    margin: 0.3em 0; /* Reduce vertical spacing */
+    padding: 1px 2px; /* Reduce internal padding */
+    display: inline-block;
+  }
+
+  /* Fix footer position */
   .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 16vh;
-  }
-
-  ul {
-    padding: 0;
-  }
-
-  header,
-
-  .hero {
-    width: 100%;
-    flex-direction: column;
-    height: 150px;
-    align-items: center;
-  }
-
-  nav li {
-    margin: 0;
-    padding: 0;
-  }
-
-  header nav ul li a {
-    flex-wrap: wrap;
-    font-size: 1.5em;
-    margin:1em .45em 0 0;
-    padding: 0;
+    height: 14vh; /* Reduce footer height */
   }
 
   #name {
