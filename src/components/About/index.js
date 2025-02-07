@@ -6,7 +6,7 @@ function About() {
       <p className="aboutme-rightside">
 
         &emsp;Welcome to my page.  My name is Bobby (Zaphod Bobbybrox).  I've built this page as an all things repository
-        for me things. From the gallery I run, my personal art endevors, general things that excite me, a training ground for
+        for Me tings. From the gallery I run, my personal art endevors, general things that excite me, a training ground for
         coding, my photography project & even my adventures.
         {/* <br></br>
         <br></br>
