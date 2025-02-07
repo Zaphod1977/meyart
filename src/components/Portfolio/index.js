@@ -3,7 +3,6 @@ import React from 'react';
 import horrorScorer from '../../assets/images/horror_scorer_screengrab.PNG'
 import movieJuice from '../../assets/images/movieJuice.jpg'
 import STL_Happens from '../../assets/images/STL_Happens screenshot.PNG'
-import weatherApp from '../../assets/images/weather resize.jpg'
 import Project from '../Project';
 
 

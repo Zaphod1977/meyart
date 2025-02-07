@@ -26,12 +26,12 @@ function Nav(props) {
           </li>
           <li className={currentPage === "Portfolio" ? "currentPage" : ""}>
             <a data-testid="Portfolio" href="#Portfolio" onClick={() => setCurrentPage("Portfolio")}>
-              Contributions
+              galeria de puentes
             </a>
           </li>
           <li className={currentPage === "Resume" ? "currentPage" : ""}>
             <a data-testid="Resume" href="#Resume" onClick={() => setCurrentPage("Resume")}>
-              Culture
+              Photography
             </a>
           </li>
           <li className={currentPage === "Contact" ? "currentPage" : ""}>

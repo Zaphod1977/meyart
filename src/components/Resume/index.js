@@ -1,27 +1,23 @@
+// Resume/index.js
 import React from 'react';
-function Resume(props) {
+import PhotoCarousel from '../PhotoCarousel'; // Adjust path if needed
+import './Resume.css'; // Import the new CSS file
 
+const Resume = () => {
   return (
     <section id="work" className="work">
-      <h2 className="work-leftside">CultureS</h2>
-      {/* <div >
-        <div className="serv">
-        <br></br>
-        <br></br>        <br></br>
-        <br></br>        <br></br>
-        <figure  class="circle"></figure>
-        <br></br>
-        <ul>
-        <li>Home Cinema</li>
-        <li>Whole House Audio</li>
-        <li>Whole House HD Video</li>
-        <li>High Performance Home Network w/Seemless Wifi</li>
-        <li>Reference Video Calibration</li>
-        <li>Home Automation w/Bespoke GUI</li>
-        <li>CD Collection Ripping/Duplication</li>
-        </ul>
+      {/* Left Side */}
+      <div className="work-leftside">
+        <h2>ImageS</h2>
+      </div>
+
+      {/* Right Side */}
+      <div className="work-rightside">
+        <h1>Photography</h1>
+        <div className="carousel-container">
+          <PhotoCarousel />
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
