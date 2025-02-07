@@ -8,12 +8,12 @@ const Contact = () => {
     <section id="work" className="work">
       {/* Left Side */}
       <div className="work-leftside">
-        <h2></h2>
+        <h2>MAK'r</h2>
       </div>
 
       {/* Right Side */}
       <div className="work-rightside">
-        <h1>art</h1>
+        <h1></h1>
         <div className="carousel-container">
           <ArtCarousel />
         </div>

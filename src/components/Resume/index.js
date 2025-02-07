@@ -8,12 +8,12 @@ const Resume = () => {
     <section id="work" className="work">
       {/* Left Side */}
       <div className="work-leftside">
-        <h2></h2>
+        <h2>candids for you</h2>
       </div>
 
       {/* Right Side */}
       <div className="work-rightside">
-        <h1>photography</h1>
+        <h1></h1>
         <div className="carousel-container">
           <PhotoCarousel />
         </div>
