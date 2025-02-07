@@ -1,31 +1,18 @@
-import React, { useMemo } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ArtCarousel = () => {
-  // useMemo ensures the images are imported only once on component mount
-  const photos = useMemo(() => {
-    // Helper function to import all images from the folder
-    const importAll = (r) =>
-      r.keys().map((key) => ({
-        src: r(key).default || r(key),
-        title: key.replace('./', '').replace(/\.(png|jpe?g|svg)$/i, ''),
-      }));
-    
-    let importedPhotos = [];
-    try {
-      // IMPORTANT: Verify that the folder name matches exactly.
-      // For example, if your folder is "photographs" (plural) under src/assets, the path must be:
-      importedPhotos = importAll(require.context('../../assets/art', false, /\.(png|jpe?g|svg)$/i));
-    } catch (error) {
-      console.error('Error loading photos:', error);
-    }
-    console.log('Imported photos:', importedPhotos);
-    return importedPhotos;
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    fetch("/assets/art/index.json")
+      .then((response) => response.json())
+      .then((data) => setPhotos(data))
+      .catch((error) => console.error("Error loading images:", error));
   }, []);
 
-  // Define your slider settings
   const settings = {
     dots: true,
     infinite: true,
@@ -36,11 +23,9 @@ const ArtCarousel = () => {
     responsive: [
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+        settings: { slidesToShow: 1 }
+      }
+    ]
   };
 
   return (
@@ -48,7 +33,6 @@ const ArtCarousel = () => {
       <Slider {...settings}>
         {photos.map((photo, index) => (
           <div key={index} className="carousel-slide">
-            {/* Wrapping the image in an <a> tag so it opens in a new tab */}
             <a href={photo.src} target="_blank" rel="noopener noreferrer">
               <img
                 src={photo.src}
@@ -58,7 +42,7 @@ const ArtCarousel = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "8px",
-                  margin: "0 15px",
+                  margin: "0 15px"
                 }}
               />
             </a>

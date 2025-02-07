@@ -1,34 +1,40 @@
-import React, { useMemo } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const PhotoCarousel = () => {
-  // useMemo ensures the images are imported only once on component mount
-  const photos = useMemo(() => {
-    // Helper function to import all images from the folder
-    const importAll = (r) =>
-      r.keys().map((key) => ({
-        src: r(key).default || r(key),
-        title: key.replace('./', '').replace(/\.(png|jpe?g|svg)$/i, ''),
-      }));
-    
-    let importedPhotos = [];
-    try {
-      // IMPORTANT: Verify that the folder name matches exactly.
-      // For example, if your folder is "photographs" (plural) under src/assets, the path must be:
-      importedPhotos = importAll(require.context('../../assets/photography', false, /\.(png|jpe?g|svg)$/i));
-    } catch (error) {
-      console.error('Error loading photos:', error);
-    }
-    console.log('Imported photos:', importedPhotos);
-    return importedPhotos;
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    const imageBasePath = "/assets/photography/";
+    const maxImages = 14; // Set an upper limit to prevent infinite loops
+    const validPhotos = [];
+
+    const checkImages = async () => {
+      for (let i = 1; i <= maxImages; i++) {
+        const imgPath = `${imageBasePath}image${i}.jpg`;
+        try {
+          const response = await fetch(imgPath, { method: "HEAD" });
+          if (response.ok) {
+            validPhotos.push({ src: imgPath, title: `Image ${i}` });
+          } else {
+            break; // Stop checking once we find a missing image
+          }
+        } catch (error) {
+          console.error("Error checking image:", imgPath, error);
+          break;
+        }
+      }
+      setPhotos(validPhotos);
+    };
+
+    checkImages();
   }, []);
 
-  // Define your slider settings
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false, // Prevent looping beyond available images
     speed: 500,
     centerMode: true,
     slidesToShow: 3,
@@ -36,11 +42,9 @@ const PhotoCarousel = () => {
     responsive: [
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+        settings: { slidesToShow: 1 }
+      }
+    ]
   };
 
   return (
@@ -48,7 +52,6 @@ const PhotoCarousel = () => {
       <Slider {...settings}>
         {photos.map((photo, index) => (
           <div key={index} className="carousel-slide">
-            {/* Wrapping the image in an <a> tag so it opens in a new tab */}
             <a href={photo.src} target="_blank" rel="noopener noreferrer">
               <img
                 src={photo.src}
@@ -58,7 +61,7 @@ const PhotoCarousel = () => {
                   height: "350px",
                   objectFit: "cover",
                   borderRadius: "8px",
-                  margin: "0 15px",
+                  margin: "0 15px"
                 }}
               />
             </a>
