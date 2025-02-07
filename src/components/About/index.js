@@ -2,7 +2,7 @@ import React from 'react';
 function About() {
   return (
     <section id="about" className="aboutme">
-      <h2 id="about" className="aboutme-leftside">Synapse</h2>
+      <h2 id="about" className="aboutme-leftside">synapse</h2>
       <p className="aboutme-rightside">
 
         &emsp;Welcome to my page.  My name is Bobby (Zaphod Bobbybrox).  I've built this page as an all things repository
