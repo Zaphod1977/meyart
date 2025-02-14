@@ -7,23 +7,42 @@ const ArtCarousel = () => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    fetch("/assets/art/index.json")
-      .then((response) => response.json())
-      .then((data) => setPhotos(data))
-      .catch((error) => console.error("Error loading images:", error));
+    const imageBasePath = "/assets/art/";
+    const maxImages = 2;
+    const validPhotos = [];
+
+    const checkImages = async () => {
+      for (let i = 1; i <= maxImages; i++) {
+        const imgPath = `${imageBasePath}image${i}.jpg`;
+        try {
+          const response = await fetch(imgPath, { method: "HEAD" });
+          if (response.ok) {
+            validPhotos.push({ src: imgPath, title: `Image ${i}` });
+          } else {
+            break;
+          }
+        } catch (error) {
+          console.error("Error checking image:", imgPath, error);
+          break;
+        }
+      }
+      setPhotos(validPhotos);
+    };
+
+    checkImages();
   }, []);
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: photos.length > 3, // Only enable infinite loop if there are enough images
     speed: 500,
     centerMode: true,
-    slidesToShow: 3,
+    slidesToShow: Math.min(3, photos.length), // Prevents more slides than available images
     swipeToSlide: true,
     responsive: [
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1 }
+        settings: { slidesToShow: Math.min(1, photos.length) }
       }
     ]
   };

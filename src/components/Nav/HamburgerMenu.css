@@ -1,0 +1,142 @@
+/* HamburgerMenu.css */
+
+/* Ensures UL resets properly */
+ul {
+  padding: 0;
+  opacity: 85%;
+  padding: 1em 0 1em 0;
+}
+
+/* Style for the hamburger menu */
+.hamburger-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+/* Hamburger icon styling */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 3.8em;
+  height: 4px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure menu is fully hidden when closed */
+.menu-items {
+  margin-top: 4.5em;
+  position: absolute;
+  top: 0%; /* Right below the hamburger menu */
+  right: 0; /* Aligns menu to the right */
+  background: white;
+  z-index: 1001;
+  max-height: 0;
+  overflow: hidden;
+  width: 15em; /* Adjust menu width as needed */
+  padding: 0 1.5em 0 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+/* Show menu when open */
+.hamburger-menu.open .menu-items {
+  max-height: 400px;
+  opacity: 1;
+  overflow: visible;
+}
+
+/* Style for menu links */
+.menu-items a {
+  background: white;
+  display: block;
+  padding: 10px;
+  text-align: right;
+  font-size: 1.2em;
+  color: black;
+  text-decoration: none;
+}
+
+/* Add spacing between links */
+.menu-items li {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Animate bars to X shape when menu is open */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Fix spacing and alignment */
+.hamburger-menu.open {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  padding: 10px 0;
+  z-index: 1001;
+}
+
+/* 📱 Tablet & Mobile Styles */
+@media only screen and (max-width: 390px) {
+  .hamburger-menu {
+    margin-right: 0em;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0em .5em 0em;
+  }
+
+  .menu-items {
+    margin: 9.5em 6.5em;
+    width: 10em;
+    padding: 0px 0;
+    right: 5px;
+  }
+
+  .menu-items a {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .bar {
+    width: 2.8em;
+    height: 4px;
+    background-color: #333;
+    margin: 7px 0;
+  }
+
+  .hamburger-menu.open .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

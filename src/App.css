@@ -72,6 +72,8 @@ h2{
 
 body {
   /* color: #39a6b2; */
+  margin: 0;
+  padding: 0px;
   image-resolution: 10%;
   font-family: cor;
   width: 100vw;
@@ -81,7 +83,7 @@ body {
 
 /* apply styles to <header> */
 header {
-  padding: 20px 35px;
+  padding: .1em 4em;
   align-items: center;
   background-color: gray;
   opacity: calc(100);
@@ -136,6 +138,16 @@ header a {
 header nav {
   float: right;
   margin: 7px 0;
+}
+
+.header, .navbar {
+  position: fixed;  /* Keeps navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Adjust to your navbar height */
+  background-color: gray; /* Or any color */
+  z-index: 1000; /* Ensures it stays above other content */
 }
 
 header nav ul li {
@@ -389,7 +401,7 @@ body {
     justify-content: center;
     text-align: center;
     height: auto;
-    padding: 8px 0; /* Reduce vertical padding */
+    padding: 8px 0 0 0; /* Reduce vertical padding */
   }
 
   .hero {
